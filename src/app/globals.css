@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0506;
+  --foreground: #f6eded;
+  --muted: #b09696;
+  --muted-strong: #d9c5c6;
+  --line: rgba(255, 255, 255, 0.1);
+  --accent: #b91c1c;
+  --accent-soft: rgba(185, 28, 28, 0.16);
+  --amber: #f2b64a;
+  --panel: #170a0c;
+  --panel-2: #211013;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 16% 8%, rgba(185, 28, 28, 0.14), transparent 34%),
+    radial-gradient(circle at 84% 4%, rgba(140, 14, 14, 0.1), transparent 30%),
+    var(--background);
+  color: var(--foreground);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft YaHei",
+    sans-serif;
+  letter-spacing: 0;
+}
+
+::selection {
+  background: rgba(185, 28, 28, 0.42);
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.container-page {
+  width: min(1240px, 100%);
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+.panel {
+  background: rgba(17, 19, 24, 0.86);
+  border: 1px solid var(--line);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.poster-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 16px;
+  background:
+    linear-gradient(180deg, rgba(8, 9, 12, 0.08) 0%, rgba(8, 9, 12, 0.88) 88%),
+    linear-gradient(145deg, #2b2e38 0%, #101116 72%);
+  overflow: hidden;
+}
+
+.poster-fallback::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 18px 18px;
+  mix-blend-mode: overlay;
+}
+
+.poster-fallback::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  top: 14px;
+  width: 34px;
+  height: 5px;
+  background: var(--accent);
+  opacity: 0.85;
+}
+
+.poster-fallback .poster-fallback-title {
+  position: relative;
+  z-index: 1;
+  font-size: 22px;
+  line-height: 1.15;
+  font-weight: 800;
+  color: #fff;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+.poster-fallback .poster-fallback-meta {
+  position: relative;
+  z-index: 1;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 12px;
+}
+
+.hero-gradient {
+  background:
+    linear-gradient(180deg, rgba(8, 9, 12, 0.25) 0%, rgba(8, 9, 12, 0.72) 66%, var(--background) 100%),
+    linear-gradient(90deg, rgba(8, 9, 12, 0.82) 0%, rgba(8, 9, 12, 0.2) 62%, rgba(8, 9, 12, 0.42) 100%);
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
