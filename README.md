@@ -23,6 +23,10 @@
   Pick 1-5 movies you love. AI finds the ones you will love next.
 </p>
 
+## Demo Video
+
+Watch the demo on Bilibili: [【我做了一个“以电影找电影”的 AI 推荐系统】](https://www.bilibili.com/video/BV1uF8Z6WEbi/)
+
 ## What is CineMind
 
 CineMind is a cinematic movie database and AI discovery platform. Instead of forcing users to write a natural-language prompt, you simply **select one or more films** you have watched or enjoyed. The system analyzes their shared genres, keywords, atmosphere, and production countries, retrieves candidates from TMDB, builds semantic documents, embeds them, and returns ranked recommendations with a clear explanation for every pick.
